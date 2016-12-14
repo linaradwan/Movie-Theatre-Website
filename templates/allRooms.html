@@ -1,0 +1,166 @@
+<html><head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+    </head><body>
+        <div class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/"><span>ALINA</span></a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active">
+                            <a href="/StaffSignIn">Home</a>
+                        </li>
+                        <li>
+                            <a href="/">Sign Out<br></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div><div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12 text-center">
+                    <div class="btn-group btn-group-lg">
+                      <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">Movies&nbsp;<span class="fa fa-caret-down"><br></span></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li>
+                          <a href="/addMovie">ADD MOVIE</a>
+                        </li>
+                        <li>
+                          <a href="/deleteMovie">DELETE MOVIE</a>
+                        </li>
+                        <li>
+                          <a href="/modifyMovie">MODIFY MOVIE</a>
+                        </li>
+                        <li>
+                          <a href="/allMovie">ALL MOVIE</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="btn-group btn-group-lg">
+                      <a class="btn btn-default dropdown-toggle" data-toggle="dropdown"> Showings&nbsp;<span class="fa fa-caret-down"></span></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li>
+                          <a href="/addShowing">ADD SHOWING</a>
+                        </li>
+                        <li>
+                          <a href="/deleteShowing">DELETE SHOWING</a>
+                        </li>
+                        <li>
+                          <a href="/modifyShowing">MODIFY SHOWING</a>
+                        </li>
+                        <li>
+                          <a href="/allShowing">ALL SHOWING</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="btn-group btn-group-lg">
+                      <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">Customer&nbsp;<span class="fa fa-caret-down"></span></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li>
+                          <a href="/addCustomer">ADD CUSTOMER</a>
+                        </li>
+                        <li>
+                          <a href="/deleteCustomer">DELETE CUSTOMER</a>
+                        </li>
+                        <li>
+                          <a href="/modifyCustomer">MODIFY CUSTOMER</a>
+                        </li>
+                        <li>
+                          <a href="/allCustomer">LIST CUSTOMER</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="btn-group btn-group-lg">
+                      <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">Genres&nbsp;<span class="fa fa-caret-down"></span></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li>
+                          <a href="/addGenre">ADD GENRES</a>
+                        </li>
+                        <li>
+                          <a href="/deleteGenre">DELETE GENRES</a>
+                        </li>
+                        <li>
+                          <a href="/allGenre">LIST GENRES</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="btn-group btn-group-lg">
+                      <a class="btn btn-default dropdown-toggle" data-toggle="dropdown"> Rooms&nbsp;<span class="fa fa-caret-down"></span></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li>
+                          <a href="/addTheatreRoom">ADD ROOMS</a>
+                        </li>
+                        <li>
+                          <a href="/deleteRooms">DELETE ROOMS</a>
+                        </li>
+                        <li>
+                          <a href="/modifyRooms">MODIFY ROOMS</a>
+                        </li>
+                        <li>
+                          <a href="/allRooms">ALL ROOMS</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="btn-group btn-group-lg">
+                      <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">Attend<span class="fa fa-caret-down"></span></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li>
+                          <a href="/allAttend">ALL ATTENDANCE</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                                <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Room Number</th>
+                                    <th>Capactiy</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                        {% for rooms in Rooms %}
+
+                            <tr>
+                                    <td>{{rooms.0}}</td>
+                                    <td>{{rooms.1}}</td>
+                                </tr>
+
+{% endfor %}
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+</body></html>

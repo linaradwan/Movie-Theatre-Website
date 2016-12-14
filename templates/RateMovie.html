@@ -1,0 +1,114 @@
+<html><head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+    </head><body>
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><span>ALINA</span></a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="/Customer">Home</a>
+                        </li>
+                        <li>
+                            <a href="/SearchShowings">Search Showings</a>
+                        </li>
+                        <li>
+                            <a href="/BuyTicket">Buy Ticket</a>
+                        </li>
+                        <li class="active">
+                            <a href="#">Rate Movie</a>
+                        </li>
+                        <li>
+                            <a href="/SignIn">Profile</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+         <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <form action="/RateMovieSubmit" method="post">
+              <div class="form-group">
+                <label class="control-label" for="CustomerID">UserId</label>
+                <input class="form-control" name="idCustomer" id="CustomerID" placeholder="CustomerID" type="email">
+              </div>
+
+             <div class="form-group">
+                <div class="input-group">
+                   <label class="control-label" for="CustomerID">Select a Movie:</label>
+                           <select name="movie" style="max-width:400px" class="form-control" id="genreList" aria-labelledby="dropdownMenu4">
+                                  {% for movie in movies %}
+
+                                    <option>{{movie.0}},{{movie.1}},{{movie.2}} </option>
+                        
+                              {% endfor %}
+                            </select>
+                            </div>
+                        </div>
+              
+  <div class="form-group">
+                <div class="input-group">
+                   <label class="control-label" for="CustomerID"> Rate a Movie:</label>
+
+                            <select name="rating" id="example">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                               
+                            </div>
+                        </div>
+
+              <button type="submit" class="btn btn-default">ADD</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+                
+                    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.1/themes/fontawesome-stars.css">
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.1/jquery.barrating.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.1/jquery.barrating.min.js.map"></script>
+                    <script type="text/javascript">
+                        $(function() {
+                                      $('#example').barrating({
+                                        theme: 'fontawesome-stars'
+                                      });
+                                   });
+                    </script>
+                    <div class="star-ratings"></div>
+                </div>
+            </div>
+            <div class="col col-fullwidth">
+                <div class="star-ratings">
+                    <span class="title"></span>
+                </div>
+            </div>
+        </div>
+    
+
+</body></html>
